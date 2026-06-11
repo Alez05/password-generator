@@ -1,0 +1,42 @@
+.strength-meter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.5rem;
+  background: #18171f;
+}
+
+.strength-label {
+  color: #817d92;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.strength-result {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.strength-level {
+  color: #e6e5ea;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.strength-bars {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.bar {
+  width: 10px;
+  height: 28px;
+  border: 2px solid #e6e5ea;
+}
+
+.bar.active {
+  background: #f8cd65;
+  border-color: #f8cd65;
+}

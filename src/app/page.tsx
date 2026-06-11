@@ -1,12 +1,9 @@
-import { ParentContainer, TextBox, CheckBoxInput, RangeInput  } from "@/lib";
+import { ParentContainer, TextBox, CheckBoxInput, RangeInput, StrengthMeter, ButtonInput  } from "@/lib";
 
 export default function Home() {
   return (
     <main>
       <ParentContainer/>
-      <TextBox/>
-      <RangeInput/>
-      <CheckBoxInput/>
     </main>
   )
 }

@@ -1,17 +1,18 @@
 import "../styles/button_input.css";
+import { TButton } from "./type";
 
-const ButtonInput = () => {
+const ButtonInput = ({ generatePassword }: TButton) => {
   return (
     <div>
-      <form action="">
-        <label htmlFor="fbutton">
-          Generate
-          <span>
-            <i>icon</i>
-          </span>
-        </label>
-        <button type="submit" value="fbutton"/>
-      </form>
+      <button type="submit" onClick={generatePassword} className="bbutton">
+        Generate
+        <span>
+          <img
+            src="/assets/images/icon-arrow-right.svg"
+            alt="arrow right"
+          />
+        </span>
+      </button>
     </div>
   );
 };

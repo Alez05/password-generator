@@ -17,3 +17,13 @@ export type TCheckbox = {
   setNumbers: Dispatch<SetStateAction<boolean>>;
   setSymbols: Dispatch<SetStateAction<boolean>>;
 };
+
+
+export type TButton = {
+  generatePassword: () => void;
+}
+
+
+export type TText = {
+  password: string;
+}

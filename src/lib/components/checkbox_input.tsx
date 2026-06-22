@@ -1,22 +1,35 @@
-const CheckBoxInput = () => {
+import "../styles/checkbox.css";
+import { TCheckbox } from "./type";
+
+const CheckBoxInput = ({
+  lowercase,
+  numbers,
+  symbols,
+  uppercase,
+  setLowercase,
+  setNumbers,
+  setSymbols,
+  setUppercase,
+}: TCheckbox) => {
+
   return (
     <div>
       <h1>Checkbox</h1>
       <form action="">
-        <input type="checkbox" id="check1" name="" />
-        <label htmlFor="check1">Include Uppercase Letters</label>
+        <input type="checkbox" id="uppercase" name="" checked={uppercase} onChange={() => setUppercase(!uppercase)} />
+        <label htmlFor="uppercase">Include Uppercase Letters</label>
         <br />
 
-        <input type="checkbox" id="check2" name="" />
-        <label htmlFor="check2">Include Lowercase Letters</label>
+        <input type="checkbox" id="lowercase" name="" checked={lowercase} onChange={() => setLowercase(!lowercase)} />
+        <label htmlFor="lowercase">Include Lowercase Letters</label>
         <br />
 
-        <input type="checkbox" id="check3" name="" />
-        <label htmlFor="check3">Include Numbers</label>
+        <input type="checkbox" id="numbers" name="" checked={numbers} onChange={() => setNumbers(!numbers)} />
+        <label htmlFor="numbers">Include Numbers</label>
         <br />
 
-        <input type="checkbox" id="check4" name="" />
-        <label htmlFor="check4">Include Symbols</label>
+        <input type="checkbox" id="symbols" name="" checked={symbols} onChange={() => setSymbols(!symbols)} />
+        <label htmlFor="symbols">Include Symbols</label>
       </form>
     </div>
   );

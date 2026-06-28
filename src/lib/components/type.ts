@@ -5,7 +5,6 @@ export type TRange = {
   setPasswordLength: Dispatch<SetStateAction<number>>;
 };
 
-
 export type TCheckbox = {
   uppercase: boolean;
   lowercase: boolean;
@@ -18,12 +17,15 @@ export type TCheckbox = {
   setSymbols: Dispatch<SetStateAction<boolean>>;
 };
 
-
 export type TButton = {
   generatePassword: () => void;
-}
-
+};
 
 export type TText = {
   password: string;
-}
+};
+
+export type TStrength = {
+  score: number;
+  strength: string;
+};

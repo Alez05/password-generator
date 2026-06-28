@@ -12,7 +12,7 @@ const RangeInput = ({passwordLength, setPasswordLength}:TRange) => {
         type="range"
         id="frange"
         min={8}
-        max={16}
+        max={20}
         value={passwordLength}
         onChange={(e: ChangeEvent<HTMLInputElement>) => setPasswordLength(Number(e.target.value))}
         name="frange"

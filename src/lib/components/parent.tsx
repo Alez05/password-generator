@@ -15,7 +15,12 @@ const ParentContainer = () => {
   const [numbers, setNumbers] = useState(false);
   const [symbols, setSymbols] = useState(false);
 
+  const [strength, setStrength] = useState("");
+  const [score, setScore] = useState(0);
+
   const [password, setPassword] = useState("");
+
+  const [strengthLevel, setStrengthLevel] = useState(0);
 
   const generatePassword = () => {
     console.log(passwordLength);
@@ -43,7 +48,7 @@ const ParentContainer = () => {
     }
 
     if (characters.length === 0) {
-      return;
+      characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     }
 
     let newPassword = "";
@@ -54,13 +59,70 @@ const ParentContainer = () => {
     }
     setPassword(newPassword);
 
+    let passwordScore = 0;
+
+    if (newPassword.length >= 8) {
+      passwordScore++;
+    }
+
+    if (newPassword.length >=12 ) {
+      passwordScore++
+    }
+
+    if (newPassword.length >=16 ) {
+      passwordScore++
+    }
+
+    if (newPassword.length >= 20) {
+      passwordScore++
+    }
+
+    if (/[A-Z]/.test(newPassword)) {
+      passwordScore++;
+    }
+
+    if (/[a-z]/.test(newPassword)) {
+      passwordScore++;
+    }
+
+    if (/[0-9]/.test(newPassword)) {
+      passwordScore++;
+    }
+
+    if (/[!@£$%^&*]/.test(newPassword)) {
+      passwordScore++;
+    }
+
+    setScore(passwordScore);
+
+    let passwordStrength = "";
+    let strengthLevel = 0;
+
+    if (passwordScore <= 2) {
+      passwordStrength = "WEAK";
+      strengthLevel = 1
+    } else if (passwordScore <= 4) {
+      passwordStrength = "MEDIUM";
+      strengthLevel = 2
+    } else if (passwordScore <=6 ) {
+      passwordStrength = "STRONG";
+      strengthLevel = 3
+    } else {
+      passwordStrength = "VERY STRONG";
+      strengthLevel = 4
+    }
+
+    setStrengthLevel(strengthLevel);
+
+    setStrength(passwordStrength);
+
     console.log(newPassword, "password");
   };
 
   return (
     <section className="pcontainer">
       <h1>Password Generator</h1>
-      <TextBox  password={password}/>
+      <TextBox password={password} />
       <RangeInput
         passwordLength={passwordLength}
         setPasswordLength={setPasswordLength}
@@ -75,7 +137,7 @@ const ParentContainer = () => {
         symbols={symbols}
         setSymbols={setSymbols}
       />
-      <StrengthMeter />
+      <StrengthMeter score={strengthLevel} strength={strength}/>
       <ButtonInput generatePassword={generatePassword} />
     </section>
   );

@@ -1,23 +1,16 @@
 import "../styles/strength_meter.css";
+import { TStrength } from "./type";
 
-const StrengthMeter = () => {
+const StrengthMeter = ({ score, strength}: TStrength) => {
   return (
     <div className="strength-meter">
-      <span className="strength-label">STRENGTH</span>
-
-      <div className="strength-result">
-        <span className="strength-level">MEDIUM</span>
-
-        <div className="strength-bars">
-          <div className="bar active"></div>
-
-          <div className="bar active"></div>
-
-          <div className="bar active"></div>
-
-          <div className="bar"></div>
-        </div>
-      </div>
+      {[1, 2, 3, 4].map((bar) => (
+        <div
+          key={bar}
+          className={bar <= score ? "bar active" : "bar"}
+        />
+      ))}
+      <span>{strength}</span>
     </div>
   );
 };

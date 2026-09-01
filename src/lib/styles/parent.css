@@ -1,7 +1,15 @@
-.pcontainer{
+.pwrapper {
+  min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.pcontainer {
+  width: 543px;
+  height: 630px;
+
+  display: flex;
   flex-direction: column;
-  margin: 0 auto;
 }

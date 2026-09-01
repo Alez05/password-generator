@@ -42,16 +42,18 @@ const ParentContainer = () => {
   };
 
   return (
-    <section className="pcontainer">
-      <h1>Password Generator</h1>
-      <TextBox password={password} />
-      <RangeInput
-        passwordLength={passwordLength}
-        setPasswordLength={setPasswordLength}
-      />
-      <CheckBoxInput settings={settings} setSettings={setSettings} />
-      <StrengthMeter score={strengthLevel} strength={strength} />
-      <ButtonInput generatePassword={handleGeneratePassword} />
+    <section className="pwrapper">
+      <div className="pcontainer">
+        <h1>Password Generator</h1>
+        <TextBox password={password} />
+        <RangeInput
+          passwordLength={passwordLength}
+          setPasswordLength={setPasswordLength}
+        />
+        <CheckBoxInput settings={settings} setSettings={setSettings} />
+        <StrengthMeter score={strengthLevel} strength={strength} />
+        <ButtonInput generatePassword={handleGeneratePassword} />
+      </div>
     </section>
   );
 };

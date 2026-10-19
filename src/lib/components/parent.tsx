@@ -32,6 +32,10 @@ const ParentContainer = () => {
 
   const handleGeneratePassword = () => {
     const characters = buildCharacterPool(settings);
+    if (!characters) {
+      return;
+    }
+
     const newPassword = generatePassword(passwordLength, characters);
     const passwordScore = calculatePasswordScore(newPassword);
     const { strength, level } = calculatePasswordStrength(passwordScore);

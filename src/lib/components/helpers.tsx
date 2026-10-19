@@ -20,10 +20,10 @@ export const buildCharacterPool = (settings: TSettings) => {
     characters += "!@£$%^&*";
   }
 
-  if (characters.length === 0) {
-    characters =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  }
+  // if (characters.length === 0) {
+  //   characters =
+  //     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  // }
 
   return characters;
 };
@@ -34,6 +34,10 @@ export const generatePassword = (
   passwordLength: number,
   characters: string,
 ) => {
+  if (characters.length === 0) {
+    return "";
+  }
+
   let newPassword = "";
   const passwordLengthValue = Number(passwordLength);
 
@@ -95,13 +99,13 @@ export const calculatePasswordStrength = (passwordScore: number) => {
     passwordStrength = "WEAK";
     strengthLevel = 1;
   } else if (passwordScore <= 4) {
-    passwordStrength = "MEDIUM";
+    passwordStrength = "FAIR";
     strengthLevel = 2;
-  } else if (passwordScore <= 6) {
-    passwordStrength = "STRONG";
-    strengthLevel = 3;
+  } else if (passwordScore <=6) {
+    passwordStrength = "MEDIUM";
+    strengthLevel = 3
   } else {
-    passwordStrength = "VERY STRONG";
+    passwordStrength = "STRONG";
     strengthLevel = 4;
   }
 

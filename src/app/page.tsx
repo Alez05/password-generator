@@ -1,9 +1,10 @@
-import { ParentContainer, TextBox, CheckBoxInput, RangeInput, StrengthMeter, ButtonInput  } from "@/lib";
+import { ParentContainer } from "@/lib";
+import "./globals.css";
 
 export default function Home() {
   return (
     <main>
-      <ParentContainer/>
+      <ParentContainer />
     </main>
-  )
+  );
 }

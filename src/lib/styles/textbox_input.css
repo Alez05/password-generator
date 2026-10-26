@@ -1,3 +1,53 @@
+.tbparent {
+margin: 0;
+}
+
+.tbcontainer {
+position: relative;
+width: 100%
+}
+
 .fname {
-  border: 1px solid brown;
+width: 540;
+height: 80px;
+padding: 0 40px 0 40px;
+background-color: #24232C;
+font-size: 2.2rem;
+box-sizing: border-box;
+color: #E6E5EA;
+}
+
+.fname:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.tbbutton {
+position: absolute;
+top: 50%;
+right: 30px;
+transform: translateY(-50%);
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+width: 36px;
+height: 36px;
+padding: 0;
+
+border: none;
+border-radius: 8px;
+background: transparent;
+cursor: pointer;
+}
+
+.tbbutton:hover {
+background-color: #f0f0f0;
+}
+
+.tbicon {
+width: 20px;
+height: 20px;
+object-fit: contain;
 }

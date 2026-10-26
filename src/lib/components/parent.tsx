@@ -47,9 +47,9 @@ const ParentContainer = () => {
 
   return (
     <section className="pwrapper">
+      <h1 className="ptitle">Password Generator</h1>
+      <TextBox password={password} />
       <div className="pcontainer">
-        <h1>Password Generator</h1>
-        <TextBox password={password} />
         <RangeInput
           passwordLength={passwordLength}
           setPasswordLength={setPasswordLength}

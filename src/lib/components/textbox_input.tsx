@@ -1,12 +1,11 @@
-"use client"
+"use client";
 import "../styles/textbox_input.css";
-import copyIcon from '../../../public/assets/images/icon-copy.svg'
+import copyIcon from "../../../public/assets/images/icon-copy.svg";
 import { TText } from "./type";
 
-const TextBox = ({password}: TText) => {
-
+const TextBox = ({ password }: TText) => {
+  console.log(copyIcon);
   const copyToClipboard = () => {
-
     const copyText = document.getElementById("fname");
 
     const input = copyText as HTMLInputElement;
@@ -17,14 +16,22 @@ const TextBox = ({password}: TText) => {
     alert("Copied the text:" + input.value);
   };
 
-
   return (
-    <div>
-      <form action="">
-        <label htmlFor="fname">Text Field</label><br />
-        <input type="text" id="fname" name="fname" className="fname" value={password} readOnly />
-
-        <button className="tbbutton" onClick={copyToClipboard}><img src={copyIcon} alt="copy to clipboard" className="tbicon" /></button>
+    <div className="tbparent">
+      <form action="" className="tbwrapper">
+        <div className="tbcontainer">
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            className="fname"
+            value={password}
+            readOnly
+          />
+          <button className="tbbutton" onClick={copyToClipboard}>
+            <img src={copyIcon.src} alt="copy to clipboard" className="tbicon" />
+          </button>
+        </div>
       </form>
     </div>
   );

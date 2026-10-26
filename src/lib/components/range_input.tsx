@@ -1,26 +1,27 @@
-"use client"
+"use client";
 import { ChangeEvent, useState } from "react";
 import "../styles/range_input.css";
 import { TRange } from "./type";
 
-const RangeInput = ({passwordLength, setPasswordLength}:TRange) => {
-
+const RangeInput = ({ passwordLength, setPasswordLength }: TRange) => {
   return (
     <div className="rcontainer">
-      <h2 className="rtitle">Character length</h2>
+      <div className="rcounter">
+        <h2 className="rtitle">Character length</h2>
+        <p className="rvalue">{passwordLength}</p>
+      </div>
       <input
         type="range"
         id="frange"
-        min={8}
+        min={0}
         max={20}
         value={passwordLength}
-        onChange={(e: ChangeEvent<HTMLInputElement>) => setPasswordLength(Number(e.target.value))}
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          setPasswordLength(Number(e.target.value))
+        }
         name="frange"
-        className="slider"
+        className="rslider"
       />
-      <p>
-        Value: {passwordLength}
-      </p>
     </div>
   );
 };

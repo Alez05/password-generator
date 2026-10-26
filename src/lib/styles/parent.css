@@ -1,15 +1,29 @@
 .pwrapper {
   min-height: 100vh;
+  margin: 0 auto;
+  gap: 1.5rem;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .pcontainer {
-  width: 543px;
-  height: 630px;
-
   display: flex;
   flex-direction: column;
+  align-items: left;
+  padding: 2rem;
+  width: 540px;
+  height: 528px;
+  gap: 2rem;
+
+  background-color: #24232C;
+}
+
+.ptitle {
+  color: #817D92;
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
 }

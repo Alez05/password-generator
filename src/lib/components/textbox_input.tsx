@@ -27,6 +27,7 @@ const TextBox = ({ password }: TText) => {
             className="fname"
             value={password}
             readOnly
+            placeholder="P4$5W0rD!"
           />
           <button className="tbbutton" onClick={copyToClipboard}>
             <img src={copyIcon.src} alt="copy to clipboard" className="tbicon" />

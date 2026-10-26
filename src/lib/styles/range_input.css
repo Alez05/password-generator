@@ -8,39 +8,40 @@
 
 .rcounter {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  color: #E6E5EA;
+  color: #e6e5ea;
 }
 
-.rtitle{
+.rtitle {
   color: #d3d3d3;
   font-size: 1.2rem;
 }
 
 .rvalue {
-  color:#A4FFAF;
+  color: #a4ffaf;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-
 /* The slider itself */
 .rslider {
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none; /* Override default CSS styles */
   appearance: none;
 
   width: 100%; /* Full-width */
   height: 8px; /* Specified height */
-  background: #18171F; /* Grey background */
-
-  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    #a4ffaf 0%,
+    #a4ffaf var(--progress),
+    #18171f var(--progress),
+    #18171f 100%
+  );
 
   outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
 }
 
 /* Mouse-over effects */
@@ -55,14 +56,20 @@
   width: 28px; /* Set a specific slider handle width */
   height: 28px; /* Slider handle height */
   border-radius: 50%;
-  background: #04AA6D; /* Green background */
+  background: #e6e5ea; /* Green background */
   cursor: pointer; /* Cursor on hover */
+}
+
+.rslider::-webkit-slider-thumb:hover {
+  background-color: #18171f;
+  border: 1px solid #a4ffaf;
+  box-shadow: 0 0 0 3px #a4ffaf;
 }
 
 .rslider::-moz-range-thumb {
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
   border-radius: 50%;
-  background: #04AA6D; /* Green background */
+  background: #a4ffaf; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }

@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "../../public/assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf";
+@import "../../public/assets/fonts/JetBrainsMono-VariableFont_wght.ttf";
 
 :root {
   --background: #18171F;

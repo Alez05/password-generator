@@ -1,29 +1,86 @@
 import "../styles/checkbox.css";
 import { TCheckbox } from "./type";
 
-const CheckBoxInput = ({
-  setSettings, settings
-}: TCheckbox) => {
-
+const CheckBoxInput = ({ setSettings, settings }: TCheckbox) => {
   return (
-    <div>
-      <h1>Checkbox</h1>
-      <form action="">
-        <input type="checkbox" id="uppercase" name="" checked={settings.uppercase} onChange={() => setSettings({...settings, uppercase: !settings.uppercase})} />
-        <label htmlFor="uppercase">Include Uppercase Letters</label>
-        <br />
+    <div className="cbcontainer">
+      <div className="cbwrapper">
+        <div className="cbcontent">
+          <input
+            type="checkbox"
+            id="uppercase"
+            className="cbcheck"
+            checked={settings.uppercase}
+            onChange={() =>
+              setSettings((prev) => ({
+                ...prev,
+                uppercase: !prev.uppercase,
+              }))
+            }
+          />
 
-        <input type="checkbox" id="lowercase" name="" checked={settings.lowercase} onChange={() => setSettings({...settings, lowercase: !settings.lowercase})} />
-        <label htmlFor="lowercase">Include Lowercase Letters</label>
-        <br />
+          <label htmlFor="uppercase" className="cbtext">
+            Include Uppercase Letters
+          </label>
+        </div>
 
-        <input type="checkbox" id="numbers" name="" checked={settings.numbers} onChange={() => setSettings({...settings, numbers: !settings.numbers})} />
-        <label htmlFor="numbers">Include Numbers</label>
-        <br />
+        <div className="cbcontent">
+          <input
+            type="checkbox"
+            id="lowercase"
+            className="cbcheck"
+            checked={settings.lowercase}
+            onChange={() =>
+              setSettings((prev) => ({
+                ...prev,
+                lowercase: !prev.lowercase,
+              }))
+            }
+          />
 
-        <input type="checkbox" id="symbols" name="" checked={settings.symbols} onChange={() => setSettings({...settings, symbols: !settings.symbols})} />
-        <label htmlFor="symbols">Include Symbols</label>
-      </form>
+          <label htmlFor="lowercase" className="cbtext">
+            Include Lowercase Letters
+          </label>
+        </div>
+
+        <div className="cbcontent">
+          <input
+            type="checkbox"
+            id="numbers"
+            className="cbcheck"
+            checked={settings.numbers}
+            onChange={() =>
+              setSettings((prev) => ({
+                ...prev,
+                numbers: !prev.numbers,
+              }))
+            }
+          />
+
+          <label htmlFor="numbers" className="cbtext">
+            Include Numbers
+          </label>
+        </div>
+
+        <div className="cbcontent">
+          <input
+            type="checkbox"
+            id="symbols"
+            className="cbcheck"
+            checked={settings.symbols}
+            onChange={() =>
+              setSettings((prev) => ({
+                ...prev,
+                symbols: !prev.symbols,
+              }))
+            }
+          />
+
+          <label htmlFor="symbols" className="cbtext">
+            Include Symbols
+          </label>
+        </div>
+      </div>
     </div>
   );
 };

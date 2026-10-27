@@ -16,7 +16,7 @@ import {
 } from "./helpers";
 
 const ParentContainer = () => {
-  const [passwordLength, setPasswordLength] = useState(8);
+  const [passwordLength, setPasswordLength] = useState(0);
 
   const [settings, setSettings] = useState({
     uppercase: false,

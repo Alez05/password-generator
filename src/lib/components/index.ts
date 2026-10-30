@@ -5,7 +5,7 @@ export { ButtonInput } from "./button_input";
 export { CheckBoxInput } from "./checkbox_input";
 export { RangeInput } from "./range_input";
 export { StrengthMeter } from "./strength_meter";
-export { TextBox } from "./textbox_input";
+export { PasswordInput } from "./password_input";
 
 
 //component types

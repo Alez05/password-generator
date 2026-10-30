@@ -1,10 +1,32 @@
+/* color states for the strength bar */
+
+.too-weak .bar.active {
+  background: #f64a4a;
+  border-color: #f64a4a;
+}
+
+.weak .bar.active {
+  background: #fb7c58;
+  border-color: #fb7c58;
+}
+
+.medium .bar.active {
+  background: #f8cd65;
+  border-color: #f8cd65;
+}
+
+.strong .bar.active {
+  background: #a4ffaf;
+  border-color: #a4ffaf;
+}
+
 .strength-meter {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   padding: 1.5rem;
-  background: #ffffff;
+  background: #18171F;
 }
 
 .strength-label {
@@ -34,9 +56,4 @@
   width: 10px;
   height: 28px;
   border: 2px solid #e6e5ea;
-}
-
-.bar.active {
-  background: #f8cd65;
-  border-color: #f8cd65;
 }

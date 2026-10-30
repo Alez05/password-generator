@@ -94,23 +94,29 @@ export const calculatePasswordScore = (newPassword: string) => {
 export const calculatePasswordStrength = (passwordScore: number) => {
   let passwordStrength = "";
   let strengthLevel = 0;
+  let strengthClass = "";
 
   if (passwordScore <= 2) {
-    passwordStrength = "WEAK";
+    passwordStrength = "TOO WEAK!";
     strengthLevel = 1;
+    strengthClass = "too-weak";
   } else if (passwordScore <= 4) {
-    passwordStrength = "FAIR";
+    passwordStrength = "WEAK";
     strengthLevel = 2;
-  } else if (passwordScore <=6) {
+    strengthClass = "weak";
+  } else if (passwordScore <= 6) {
     passwordStrength = "MEDIUM";
-    strengthLevel = 3
+    strengthLevel = 3;
+    strengthClass = "medium";
   } else {
     passwordStrength = "STRONG";
     strengthLevel = 4;
+    strengthClass = "strong";
   }
 
   return {
     strength: passwordStrength,
     level: strengthLevel,
+    extraClass: strengthClass,
   };
 };

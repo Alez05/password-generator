@@ -29,4 +29,5 @@ export type TText = {
 export type TStrength = {
   score: number;
   strength: string;
+  strengthClass: string;
 };

@@ -3,13 +3,14 @@ import { TButton } from "./type";
 
 const ButtonInput = ({ generatePassword }: TButton) => {
   return (
-    <div>
+    <div className="bcontainer">
       <button type="submit" onClick={generatePassword} className="bbutton">
         Generate
-        <span>
+        <span className="barrowrapper">
           <img
             src="/assets/images/icon-arrow-right.svg"
             alt="arrow right"
+            className="barrow"
           />
         </span>
       </button>
